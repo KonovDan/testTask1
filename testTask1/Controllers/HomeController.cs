@@ -19,9 +19,10 @@ namespace testTask1.Controllers
         [HttpGet,HttpPost]
         public IActionResult Index(string? url)
         {
-            string shortURL = "http://localhost:7095/";
-            SHA1 sha1 = SHA1.Create();
             if (url != null) {
+                if (!url.StartsWith("http")) url = "https://" + url;
+                string shortURL = "http://localhost:7095/";
+                SHA1 sha1 = SHA1.Create();
                 using (Context context = new Context()) {
                     do
                     {
