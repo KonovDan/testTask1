@@ -1,0 +1,16 @@
+﻿@model String
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form action="/" method="post">
+        <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">url://</span>
+            <input type="text" class="form-control" name="url" placeholder="Your url" aria-label="URL" aria-describedby="addon-wrapping">
+            <button type="submit" class="btn btn-primary">Shorten!</button>
+        </div>
+    </form>
+    @if (Model != "")
+    {
+        <a href="@Model">@Model</a>
+    }
+</div>
